@@ -1,0 +1,25 @@
+{
+	"welcomeFile": "index.html",
+	"authenticationMethod": "none",
+	"routes": [{
+		"source": "(.*)(.xsjs)",
+		"destination": "xsjs_api",
+		"csrfProtection": true
+	}, {
+		"source": "(.*)(.xsodata)",
+		"destination": "xsjs_api"
+	}, {
+		"source": "/(.*)",
+		"localDir": "resources",
+		"replace": {
+			"pathSuffixes": [
+				"index.html"
+			],
+			"services": {
+				"sapui5_sb": {
+					"tag": "ui5"
+				}
+			}
+		}
+	}]
+}

@@ -21,6 +21,19 @@ modules:
     - name: db
     - name: hdi_db
     
+
+ - name: web
+   type: html5
+   path: web
+   requires:
+     - name: odataCreate-ui5
+     - name: xsjs_api
+       group: destinations
+       properties:
+         name: xsjs_api
+         url: '~{url}'
+         forwardAuthToken: true
+
 resources:
  - name: hdi_db
    parameters:
@@ -29,3 +42,8 @@ resources:
    properties:
       hdi-container-name: ${service-name}
    type: com.sap.xs.hdi-container
+ - name: odataCreate-ui5
+   type: org.cloudfoundry.managed-service
+   parameters:
+      service: sapui5_sb
+      service-plan: sapui5-1.52
