@@ -1,0 +1,9 @@
+service namespace "SYSTEM" { 
+"SYS_DATA" as "SYS_DATA";
+}
+
+annotations
+
+{
+enable OData4SAP;
+}
